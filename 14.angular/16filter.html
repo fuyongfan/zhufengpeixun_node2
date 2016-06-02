@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="firstCtrl">
+    {{ff | data:'yyyy-dd hh:mm:ss'}}
+</div>
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('appModule', []);
+    //要使用什么过滤器，就在以前的后面加filter 注入
+    app.controller('firstCtrl', function ($scope, dateFilter) {
+        $scope.ff = 1233333333345;
+        //uppercaseFilter 装我们要格式化的数据 ，
+        $scope.ff = dateFilter($scope.ff,'yyyy-dd hh:mm:ss');
+    })
+</script>
+</body>
+</html>

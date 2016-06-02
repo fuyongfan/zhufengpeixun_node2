@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+<zf-dr></zf-dr>
+
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('appModule', []);
+    //通过模块创建指令，哦们创建的指令，最好不要以ng开头
+    //而且，页面上的指令如果带中线的要变成驼峰命名法 例如，zf-dr  zfDr
+    //在函数中 默认返回一个对象
+    app.directive('zfDr', function () {
+        return {
+            template: "<div>hell world</div>",
+            //在元素标签上生效，e
+            //A 代表属性上生效
+            //C 样式上
+            //M comment  在注释上生效
+            restrict: ''
+            //不保留以前的标签
+            //内嵌transclude 将原有标签内的内容保留，
+            transclude: true
+            //在标签上增加将我们原有表亲啊里的内容保留放在这个标签上
+            //链接，链接
+    }
+    })
+</script>
+
+</body>
+</html>
